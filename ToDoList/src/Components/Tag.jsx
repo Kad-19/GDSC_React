@@ -4,8 +4,8 @@ import "./Tag.css";
 
 const Tag = ({ tagName, selectTag, selected }) => {
   const tagStyle = {
-    Urgent: { backgroundColor: "#fda821" },
-    Important: { backgroundColor: "#15d4c8" },
+    Urgent: { backgroundColor: "#FFC75F" },
+    Important: { backgroundColor: "#B39CD0" },
     default: { backgroundColor: "#f9f9f9" },
   };
   return (

@@ -19,6 +19,14 @@ const App = () => {
     const newTasks = tasks.filter((tasks, index) => index != taskIndex);
     setTasks(newTasks);
   };
+  const changeStatus = (taskIndex, newStatus) => {
+    // setTasks((prev) => {
+    //   return [...prev, prev[taskIndex]={...prev[taskIndex], status: status}]
+    // });
+    const updateditems = [...tasks];
+    updateditems[taskIndex] = { ...updateditems[taskIndex], status: newStatus};
+    setTasks(updateditems);
+  };
   return (
     <div className="app">
       <TaskForm setTasks={setTasks} />
@@ -29,6 +37,7 @@ const App = () => {
           tasks={tasks}
           status="todo"
           handleDelete={handleDelete}
+          changeStatus={changeStatus}
         />
         <TaskColumn
           title="Doing"
@@ -36,6 +45,7 @@ const App = () => {
           tasks={tasks}
           status="doing"
           handleDelete={handleDelete}
+          changeStatus={changeStatus}
         />
         <TaskColumn
           title="Done"
@@ -43,6 +53,7 @@ const App = () => {
           tasks={tasks}
           status="done"
           handleDelete={handleDelete}
+          changeStatus={changeStatus}
         />
       </main>
     </div>
